@@ -45,10 +45,9 @@ const scrapeAirBnB = async (room) => {
     };
   } catch {
     console.log("Property no longer listed");
+    await browser.close();
 
     return { error: "property no longer listed" };
-  } finally {
-    await browser.close();
   }
 };
 
